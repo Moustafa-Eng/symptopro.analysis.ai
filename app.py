@@ -163,8 +163,9 @@ async def upload_file(file: UploadFile = File(...)):
     prediction = int(model.predict(input_data)[0])
 
     prediction_disease = disease_mapping.get(prediction, "unKnown")
+    result = prediction_disease
+    return {result}
 
-    return prediction_disease
     #return result
 
 
